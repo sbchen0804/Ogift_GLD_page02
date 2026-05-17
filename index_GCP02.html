@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湧健康靈芝滴粒養生調理尊榮版 Ogift_GLD</title>
+    
+    <!-- [OG 標籤] 讓社群 (LINE/FB) 分享連結時出現吸睛的圖文預覽 (已精準連結 Banner 圖並移除「獨家」字眼) -->
+    <meta property="og:title" content="湧健康 靈芝滴粒養生調理尊榮版 Ogift_GLD">
+    <meta property="og:description" content="專為現代高壓族群、銀髮養生設計！高純度靈芝滴粒，快速溶解好吸收。給您最尊榮、最完整的活力防護網。">
+    <meta property="og:image" content="https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/main/images/GCP_ban01.webp">
+    <meta property="og:url" content="https://ogift.com.tw/">
+    <meta property="og:type" content="website">
+
+    <!-- 載入前端主流 Tailwind CSS (無須安裝，直接調用) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 FontAwesome 質感圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- ================================================================= -->
+    <!-- [四軌智慧型圖片防漏與載入技術] 確保 preview 模式與正式環境皆能瞬間亮圖 -->
+    <!-- ================================================================= -->
+    <script>
+        function handleImgErr(img, relativePath) {
+            // 防止載入失敗時造成瀏覽器無限循環請求
+            const currentStep = parseInt(img.getAttribute('data-fallback-step') || '0', 10);
+            if (currentStep >= 5) return;
+            
+            const filename = relativePath.split('/').pop();
+            const folder = relativePath.substring(0, relativePath.lastIndexOf('/') + 1) || 'images/';
+            
+            if (currentStep === 0) {
+                img.setAttribute('data-fallback-step', '1');
+                // 第一步備援：優先嘗試從 Raw GitHub main 分支加載
+                img.src = 'https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/main/' + relativePath;
+            } else if (currentStep === 1) {
+                img.setAttribute('data-fallback-step', '2');
+                // 第二步備援：嘗試從 Raw GitHub master 分支加載
+                img.src = 'https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/master/' + relativePath;
+            } else if (currentStep === 2) {
+                img.setAttribute('data-fallback-step', '3');
+                // 第三步備援：防大小寫 typo 衝突，自動轉換大小寫再次加載
+                const toggledFilename = filename === filename.toLowerCase() ? filename.toUpperCase() : filename.toLowerCase();
+                img.src = 'https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/main/' + folder + toggledFilename;
+            } else if (currentStep === 3) {
+                img.setAttribute('data-fallback-step', '4');
+                // 第四步備援：嘗試靜態網域 GitHub Pages
+                img.src = 'https://sbchen0804.github.io/Ogift_GLD_page01/' + relativePath;
+            } else if (currentStep === 4) {
+                img.setAttribute('data-fallback-step', '5');
+                // 第五步備援：當所有 GitHub 管道皆因編譯延遲失效，自動調用高可用的原廠線上雲端圖庫，確保網頁絕不破圖！
+                if (filename.toLowerCase().includes('logo')) {
+                    img.src = 'https://i.postimg.cc/5NJmcN7t/yong-ling-zhilogo-heng-02-png.webp';
+                } else if (filename.toLowerCase().includes('bg')) {
+                    img.src = 'https://i.postimg.cc/85RRXpKz/BG-page001.png';
+                } else if (filename.toLowerCase().includes('gcp_com00')) {
+                    img.src = 'https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/main/images/GCP_com00.webp';
+                } else if (filename.toLowerCase().includes('gcp_com01')) {
+                    img.src = 'https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/main/images/GCP_com01.webp';
+                } else if (filename.toLowerCase().includes('gcp_ban01')) {
+                    img.src = 'https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/main/images/GCP_ban01.webp';
+                } else if (filename.toLowerCase().includes('gcp_ban02m')) {
+                    img.src = 'https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/main/images/GCP_ban02m.webp';
+                } else if (filename.toLowerCase().includes('com') || filename.toLowerCase().includes('yi-sheng-jun')) {
+                    img.src = 'https://i.postimg.cc/Pr0rLBmn/yi-sheng-jun-zhu-shi-jue-051001.png'; 
+                } else {
+                    img.src = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80';
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f7f5f0; /* 溫潤米色底底色 */
+            color: #292524; /* 熟齡友善深石色文字 */
+        }
+
+        /* 平滑滾動效果 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 閃爍動畫：用於吸引目光的購買按鈕 */
+        @keyframes pulse-gold {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(212, 163, 89, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(212, 163, 89, 0.7); }
+        }
+        .pulse-gold-btn {
+            animation: pulse-gold 2s infinite;
+        }
+
+        /* 隱藏原生捲動條，保持簡報乾淨 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center relative pb-24">
+
+    <!-- ================================================================= -->
+    <!-- [官方指定背景圖固定底層] 確保所有瀏覽器 100% 穩定呈現，微調透明度以防遮擋 -->
+    <!-- ================================================================= -->
+    <div id="bg-div" class="fixed inset-0 w-full h-full pointer-events-none -z-10" 
+         style="background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; opacity: 0.95;">
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- [核心控制台] 營運長專屬：免動底層代碼，直接在此用 AI 或手動更換關鍵資料 -->
+    <!-- ================================================================= -->
+    <script>
+        const GLOBAL_CONFIG = {
+            productCode: "Ogift_GLD",             // 產品識別代碼 (代碼更新為 Ogift_GLD)
+            productName: "湧健康靈芝滴粒",        // 產品名稱已修改為 湧健康靈芝滴粒
+            // 導購跳轉目標網址 (專屬商城連結)
+            storeUrl: "https://ogift.com.tw/product/20260515/", 
+            // 4秒跳轉等待頁面中的轉單按鈕網址
+            redirectStoreUrl: "https://ogift.com.tw/product/20260515/",
+            // YouTube 短影音代碼 (已更新為指定影音：8n520aA1cAk)
+            youtubeVideoId: "8n520aA1cAk", 
+            
+            // 您的 GitHub Pages 靜態託管基本網址 (用於 Canvas 預覽備援)
+            gitHubBaseUrl: "https://sbchen0804.github.io/Ogift_GLD_page01/",
+            // 您的 GitHub Raw 原始託管端點 (快速預覽最優選擇)
+            gitHubRawUrl: "https://raw.githubusercontent.com/sbchen0804/Ogift_GLD_page01/main/"
+        };
+    </script>
+
+    <!-- ================================================================= -->
+    <!-- [上方固定導覽列 Sticky Navbar] -->
+    <!-- ================================================================= -->
+    <nav id="top-nav" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-emerald-800/10 py-3 px-4 md:px-8 flex justify-between items-center z-50 shadow-sm">
+        <div class="flex items-center cursor-pointer" onclick="goHomeFocus()">
+            <!-- 智慧型 brand LOGO -->
+            <img src="images/yong-ling-zhilogo-heng-02-png.webp" 
+                 onerror="handleImgErr(this, 'images/yong-ling-zhilogo-heng-02-png.webp')" 
+                 alt="湧健康" class="h-10 md:h-12 w-auto object-contain">
+        </div>
+        
+        <!-- 右側快速導購按鈕 (改為「專屬採購商城」觸發原廠 4 秒跳轉 Overlay) -->
+        <button onclick="triggerPurchase('專屬採購商城', 'NAV_TOP')" class="bg-gradient-to-r from-emerald-600 to-emerald-800 hover:from-emerald-700 hover:to-emerald-900 text-white font-bold px-5 py-2 rounded-full text-sm md:text-base transition-all shadow-md active:scale-95 flex items-center">
+            <i class="fa-solid fa-store mr-1.5 text-sm"></i> 專屬採購商城 <i class="fa-solid fa-chevron-right text-xs ml-1.5 opacity-80"></i>
+        </button>
+    </nav>
+
+    <!-- ================================================================= -->
+    <!-- [首屏主視覺 Hero Banner] -->
+    <!-- ================================================================= -->
+    <header class="w-full max-w-4xl mt-24 px-4 text-center">
+        <!-- 頂級主視覺容器 (對齊原案溫潤米白框線，採用透光毛玻璃質感顯露背景) -->
+        <div class="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-md border border-stone-200/80 p-1.5 shadow-xl">
+            
+            <!-- 手機版專屬頂部宣傳列：與 3:4 手機版 Banner 精準適配，一整排大氣展現，視覺無擁擠壓力 -->
+            <div class="block md:hidden w-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 text-stone-950 font-extrabold text-[13px] min-[360px]:text-sm py-2.5 px-3 rounded-t-2xl mb-1 text-center tracking-wider border-b border-amber-600/20 shadow-sm">
+                <i class="fa-solid fa-fire text-red-800 animate-pulse mr-1"></i>
+                湧健康靈芝滴粒 買一送一 專案價 $2,500 元
+            </div>
+
+            <!-- 電腦版 Banner : 16:9 橫向大氣呈現 -->
+            <img src="images/GCP_ban01.webp" 
+                 onerror="handleImgErr(this, 'images/GCP_ban01.webp')" 
+                 alt="湧健康靈芝滴粒" 
+                 class="hidden md:block w-full h-auto rounded-2xl object-cover opacity-95 hover:opacity-100 transition-opacity duration-500">
+
+            <!-- 手機版 Banner : 3:4 旗艦極簡呈現，完美銜接最頂部專案價宣告列 -->
+            <img src="images/GCP_ban02m.webp" 
+                 onerror="handleImgErr(this, 'images/GCP_ban02m.webp')" 
+                 alt="湧健康靈芝滴粒" 
+                 class="block md:hidden w-full h-auto rounded-b-2xl object-cover opacity-95 hover:opacity-100 transition-opacity duration-500">
+            
+            <!-- 行銷加分章 (僅在電腦版顯示，手機版已由頂部整排告示列優雅替代，釋放手機螢幕空間) -->
+            <div class="hidden md:flex absolute top-4 right-4 bg-gradient-to-br from-amber-500 to-orange-600 text-white font-extrabold px-4 py-4 rounded-full border-2 border-white shadow-xl flex-col justify-center items-center transform rotate-12 scale-90 md:scale-100 pulse-gold-btn">
+                <span class="text-xs tracking-widest text-amber-100">限時強檔</span>
+                <span class="text-lg font-black leading-tight">買一送一</span>
+                <span class="text-[10px] opacity-95">專案價 $2500</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================================================= -->
+    <!-- [全寬度無縫跑馬燈 Marquee] (Home 鍵定位點) (優化：緊縮上下高度 mt-6 mb-4) -->
+    <!-- ================================================================= -->
+    <div id="marquee-anchor" class="w-full bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-900 py-3 border-y border-emerald-700/20 mt-6 mb-4 overflow-hidden relative shadow-sm">
+        <div class="whitespace-nowrap flex space-x-12 animate-[marquee_20s_linear_infinite]">
+            <!-- 精準更新：湧健康靈芝滴粒專屬跑馬燈文案，重複多次以達流暢無縫循環效果 -->
+            <span class="text-amber-300 font-bold text-base md:text-lg flex items-center shrink-0">
+                <i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> 湧健康靈芝滴粒，滴滴精華、粒粒濃縮，守護您與家人的每一天。
+            </span>
+            <span class="text-emerald-50 font-bold text-base md:text-lg flex items-center shrink-0">
+                <i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> 湧健康靈芝滴粒，滴滴精華、粒粒濃縮，守護您與家人的每一天。
+            </span>
+            <span class="text-amber-300 font-bold text-base md:text-lg flex items-center shrink-0">
+                <i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> 湧健康靈芝滴粒，滴滴精華、粒粒濃縮，守護您與家人的每一天。
+            </span>
+            <span class="text-emerald-50 font-bold text-base md:text-lg flex items-center shrink-0">
+                <i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> 湧健康靈芝滴粒，滴滴精華、粒粒濃縮，守護您與家人的每一天。
+            </span>
+        </div>
+    </div>
+    
+    <!-- 跑馬燈 CSS 動態 -->
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 20s linear infinite;
+        }
+    </style>
+
+    <!-- ================================================================= -->
+    <!-- [三圓互動大選單 + 展示區塊] (行銷互動核心) (優化：下邊距縮為 mb-8) -->
+    <!-- ================================================================= -->
+    <section id="interactive-content" class="w-full max-w-4xl px-4 mb-8">
+        <!-- 手機版大氣單行排版，取消「——」標註，上下高度與邊界精準調協 -->
+        <h2 class="text-center text-[15px] min-[360px]:text-[17px] min-[390px]:text-lg sm:text-2xl md:text-3xl font-black text-emerald-800 tracking-normal sm:tracking-wider mb-5">
+            探索 <span class="text-amber-600">湧健康靈芝滴粒</span> 的奧秘
+        </h2>
+
+        <!-- 三圓選單按鈕區：比例與尺寸極致加大，重現高級感與極佳點擊觸感 (優化：下邊距縮為 mb-6) -->
+        <div class="grid grid-cols-3 gap-3 md:gap-8 max-w-2xl mx-auto mb-6">
+            <!-- 按鈕 1：故事圖畫 -->
+            <button onclick="switchSection('comic')" class="flex flex-col items-center group focus:outline-none">
+                <div id="circle-comic" class="nav-circle active w-20 h-20 md:w-28 md:h-28 rounded-full bg-white border border-stone-200 group-hover:border-emerald-600 flex items-center justify-center transition-all duration-300 shadow-md">
+                    <i class="fa-solid fa-book-open text-2xl md:text-4xl text-stone-400 group-hover:text-emerald-700 transition-colors"></i>
+                </div>
+                <span class="mt-3 text-xs md:text-lg font-bold text-stone-600 group-hover:text-emerald-800 transition-colors duration-300 tracking-wider">養生圖畫篇</span>
+            </button>
+
+            <!-- 按鈕 2：專家短影音 -->
+            <button onclick="switchSection('video')" class="flex flex-col items-center group focus:outline-none">
+                <div id="circle-video" class="nav-circle w-20 h-20 md:w-28 md:h-28 rounded-full bg-white border border-stone-200 group-hover:border-emerald-600 flex items-center justify-center transition-all duration-300 shadow-md">
+                    <i class="fa-solid fa-circle-play text-2xl md:text-4xl text-stone-400 group-hover:text-emerald-700 transition-colors"></i>
+                </div>
+                <span class="mt-3 text-xs md:text-lg font-bold text-stone-600 group-hover:text-emerald-800 transition-colors duration-300 tracking-wider">專家短影音</span>
+            </button>
+
+            <!-- 按鈕 3：健康資訊 -->
+            <button onclick="switchSection('healthinfo')" class="flex flex-col items-center group focus:outline-none">
+                <div id="circle-healthinfo" class="nav-circle w-20 h-20 md:w-28 md:h-28 rounded-full bg-white border border-stone-200 group-hover:border-emerald-600 flex items-center justify-center transition-all duration-300 shadow-md">
+                    <i class="fa-solid fa-file-powerpoint text-2xl md:text-4xl text-stone-400 group-hover:text-emerald-700 transition-colors"></i>
+                </div>
+                <span class="mt-3 text-xs md:text-lg font-bold text-stone-600 group-hover:text-emerald-800 transition-colors duration-300 tracking-wider">健康資訊</span>
+            </button>
+        </div>
+
+        <!-- 三圓對應之翡翠綠經典啟動樣式 -->
+        <style>
+            .nav-circle.active {
+                background: linear-gradient(135deg, #065f46 0%, #064e3b 100%); /* bg-emerald-800 */
+                border-color: #047857 !important; /* 翡翠綠邊框 */
+                box-shadow: 0 10px 20px -3px rgba(6, 78, 59, 0.35);
+                transform: scale(1.05);
+            }
+            .nav-circle.active i {
+                color: #ffffff !important;
+            }
+        </style>
+
+        <!-- 展示板本體：採用米白透光毛玻璃精緻質感 -->
+        <div class="bg-white/90 border border-emerald-800/10 rounded-3xl p-4 md:p-10 shadow-xl backdrop-blur-md min-h-[350px] text-stone-800">
+            
+            <!-- [內容區塊 1] 養生圖畫篇 -->
+            <div id="display-comic" class="display-content space-y-6">
+                <!-- 精美直式書冊比例圖畫層次堆疊區 -->
+                <div class="flex flex-col items-center">
+                    <!-- 第一張 GCP_com00.webp -->
+                    <div class="w-full md:max-w-[340px] border border-stone-200/80 rounded-2xl overflow-hidden bg-stone-50 shadow-md flex justify-center items-center transition-all duration-300 hover:shadow-lg">
+                        <img src="images/GCP_com00.webp" 
+                             onerror="handleImgErr(this, 'images/GCP_com00.webp')" 
+                             alt="養生圖畫 第一張" class="w-full h-auto opacity-95">
+                    </div>
+                    
+                    <!-- 兩個圖像之間的優雅間隔結構，帶有羽化漸層、小草圖示及寬鬆上下間距，徹底擺脫擁擠 -->
+                    <div class="flex items-center justify-center my-6 w-full max-w-[200px] mx-auto">
+                        <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-emerald-800/30"></div>
+                        <div class="mx-3 text-emerald-700/60 text-xs"><i class="fa-solid fa-leaf"></i></div>
+                        <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-emerald-800/30"></div>
+                    </div>
+                    
+                    <!-- 第二張 GCP_com01.webp -->
+                    <div class="w-full md:max-w-[340px] border border-stone-200/80 rounded-2xl overflow-hidden bg-stone-50 shadow-md flex justify-center items-center transition-all duration-300 hover:shadow-lg">
+                        <img src="images/GCP_com01.webp" 
+                             onerror="handleImgErr(this, 'images/GCP_com01.webp')" 
+                             alt="養生圖畫 第二張" class="w-full h-auto opacity-95">
+                    </div>
+                </div>
+            </div>
+
+            <!-- [內容區塊 2] 專家短影音 (已更換為指定 YouTube 影片 ID，並依指示完全去除「100% 段木赤芝子實體」字樣卡片，集中凸顯 10倍高吸收技術) -->
+            <div id="display-video" class="display-content hidden space-y-6 pt-2">
+                
+                <!-- YouTube 響應式播放器 -->
+                <div class="aspect-video rounded-2xl overflow-hidden border border-stone-200/80 shadow-md">
+                    <iframe id="yt-player" class="w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                
+                <!-- 舒壓、對稱且完全精簡的單欄高亮卡片設計，在電腦版完美限制 max-w-[340px] 置中展示 -->
+                <div class="w-full md:max-w-[340px] mx-auto text-stone-700 text-sm md:text-base">
+                    <div class="bg-emerald-50/20 p-4 rounded-xl border border-emerald-800/10 text-center transition-all duration-300 hover:shadow-md">
+                        <h4 class="font-bold text-emerald-800 mb-1"><i class="fa-solid fa-bolt mr-1 text-amber-500"></i> ⚡ 10倍舌下速融吸收</h4>
+                        <p class="text-stone-600 text-sm leading-relaxed">繞過腸胃胃酸破壞，透過舌下直接吸收，大幅提升活性成分「多醣體與三萜類」的生物利用率。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- [內容區塊 3] 健康資訊 (雙自適應渲染：電腦幻燈片，手機瀑布流直滑閱讀) -->
+            <div id="display-healthinfo" class="display-content hidden space-y-6">
+                <div class="text-center mb-4">
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Health Slideshow</span>
+                    <h3 class="text-xl md:text-2xl font-black text-emerald-900 mt-2">湧健康生技簡報專區 (共 11 頁)</h3>
+                </div>
+
+                <!-- ========================================================= -->
+                <!-- 【手機行動版專屬：瀑布流直滑長條圖】 -->
+                <!-- ========================================================= -->
+                <div class="block md:hidden space-y-4">
+                    <p class="text-stone-500 text-center text-xs mb-3 flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-arrow-down-long animate-bounce text-emerald-700"></i>
+                        輕觸並向下滾動即可直接閱讀全部 11 頁簡報
+                    </p>
+                    <div class="space-y-3 rounded-2xl border border-stone-200 bg-stone-950 p-2 shadow-inner">
+                        <script>
+                            for (let i = 1; i <= 11; i++) {
+                                const padId = String(i).padStart(2, '0');
+                                document.write(`
+                                    <div class="w-full bg-stone-900 rounded-lg overflow-hidden border border-stone-800/60 shadow flex items-center justify-center">
+                                        <img src="images/gcpppt${padId}.webp" 
+                                             onerror="handleImgErr(this, 'images/gcpppt${padId}.webp')" 
+                                             loading="lazy" 
+                                             alt="健康簡報 ${i}" 
+                                             class="w-full h-auto object-contain max-h-[85vh]">
+                                    </div>
+                                `);
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <!-- ========================================================= -->
+                <!-- 【電腦 PC 版專屬：高規 16:9 橫向精緻幻燈片】 -->
+                <!-- ========================================================= -->
+                <div class="hidden md:block space-y-6">
+                    <p class="text-stone-500 text-center text-sm">支援鍵盤左右方向鍵，或點擊下方快捷鍵切換</p>
+                    
+                    <div class="relative w-full aspect-video md:max-w-3xl md:mx-auto border border-stone-200/80 rounded-2xl overflow-hidden bg-stone-900 shadow-lg group">
+                        <div id="slide-viewport" class="relative w-full h-full overflow-hidden cursor-grab active:cursor-grabbing">
+                            <div id="slides-track" class="flex transition-transform duration-500 ease-out h-full w-[1100%]">
+                                
+                                <div class="w-[9.0909%] h-full shrink-0 flex items-center justify-center bg-stone-900">
+                                    <img src="images/gcpppt01.webp" 
+                                         onerror="handleImgErr(this, 'images/gcpppt01.webp')" 
+                                         alt="健康簡報 1" class="max-w-full max-h-full object-contain" />
+                                </div>
+
+                                <script>
+                                    for (let i = 2; i <= 11; i++) {
+                                        const padId = String(i).padStart(2, '0');
+                                        document.write(`
+                                            <div class="w-[9.0909%] h-full shrink-0 flex items-center justify-center bg-stone-900">
+                                                <img id="slide-img-${i-1}" data-src="images/gcpppt${padId}.webp" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" alt="健康簡報 ${i}" class="max-w-full max-h-full object-contain transition-opacity duration-300" />
+                                            </div>
+                                        `);
+                                    }
+                                </script>
+
+                            </div>
+                        </div>
+
+                        <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-emerald-800 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all focus:outline-none z-20 opacity-0 group-hover:opacity-100 focus:opacity-100">
+                            <i class="fa-solid fa-chevron-left text-base md:text-lg"></i>
+                        </button>
+                        <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-emerald-800 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all focus:outline-none z-20 opacity-0 group-hover:opacity-100 focus:opacity-100">
+                            <i class="fa-solid fa-chevron-right text-base md:text-lg"></i>
+                        </button>
+
+                        <div class="absolute bottom-3 right-3 bg-black/75 text-amber-300 text-xs md:text-sm font-black px-3.5 py-1.5 rounded-full z-20 tracking-wider shadow">
+                            <span id="slide-num-indicator" class="text-white">1</span> / 11 頁
+                        </div>
+                    </div>
+
+                    <div class="max-w-2xl mx-auto mt-4 px-2">
+                        <div class="flex flex-wrap justify-center gap-1.5 md:gap-2 py-3 px-3 bg-stone-100 rounded-2xl border border-stone-200">
+                            <script>
+                                for (let i = 1; i <= 11; i++) {
+                                    document.write(`
+                                        <button id="slide-dot-${i}" onclick="goToSlide(${i-1})" class="slide-key w-8 h-8 md:w-10 md:h-10 rounded-full font-black text-xs md:text-sm flex items-center justify-center border transition-all ${i === 1 ? 'bg-emerald-800 text-white border-emerald-900 shadow-md scale-110' : 'bg-white text-stone-600 border-stone-200 hover:border-emerald-600 hover:text-emerald-800'}">
+                                            ${i}
+                                        </button>
+                                    `);
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- [右側懸浮返回 Home 按鈕] -->
+    <!-- ================================================================= -->
+    <button onclick="goHomeFocus()" class="fixed right-6 bottom-6 bg-emerald-800 hover:bg-emerald-950 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-40 pulse-gold-btn" title="返回頂部">
+        <i class="fa-solid fa-house text-lg md:text-xl"></i>
+    </button>
+
+    <!-- ================================================================= -->
+    <!-- [4 秒轉單緩衝遮罩 Overlay] -->
+    <!-- ================================================================= -->
+    <div id="redirect-overlay" class="fixed inset-0 bg-white/98 backdrop-blur-xl flex flex-col items-center justify-center z-[9999]" style="display: none;">
+        <!-- 高級動態光暈載入器 -->
+        <div class="relative w-24 h-24 mb-8">
+            <div class="absolute inset-0 rounded-full border-4 border-stone-200"></div>
+            <div class="absolute inset-0 rounded-full border-4 border-t-emerald-600 border-r-emerald-600 animate-spin"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <span id="countdown-num" class="text-3xl font-black text-emerald-800">4</span>
+            </div>
+        </div>
+        
+        <!-- 黑色高對比字體 -->
+        <h3 class="text-2xl md:text-3xl font-black text-stone-900 mb-3 text-center px-4">正在為您連線至 湧健康 安全防護收銀台...</h3>
+        <p class="text-stone-600 text-base md:text-lg max-w-md mb-8 text-center px-4 leading-relaxed">
+            我們正在為您鎖定專屬優惠組合：<br><span id="overlay-plan-name" class="text-emerald-700 text-xl font-extrabold underline decoration-amber-500 decoration-2 underline-offset-4"></span>。<br>系統將於數秒內自動為您跳轉。
+        </p>
+
+        <!-- 防迷失備用按鈕 -->
+        <div class="space-y-4 text-stone-900 text-center">
+            <button onclick="instantRedirect()" class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-extrabold px-8 py-3 rounded-full text-lg shadow-lg active:scale-95 transition-all">
+                若沒有自動跳轉，請點擊此處
+            </button>
+            <button onclick="closeOverlay()" class="block mx-auto text-sm text-stone-500 hover:text-stone-800 underline font-medium">
+                返回修改方案
+            </button>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- [免責與溫馨提示聲明] 置於網頁最底部，符合法規且不干擾主視覺 -->
+    <!-- ================================================================= -->
+    <div class="w-full max-w-4xl px-4 mt-8 mb-16 text-center">
+        <p class="text-[11px] md:text-xs text-stone-500/85 leading-relaxed bg-white/60 backdrop-blur-sm border border-stone-200/50 rounded-xl py-2.5 px-4 shadow-sm inline-block">
+            <i class="fa-solid fa-circle-info text-emerald-800/80 mr-1.5"></i>
+            靈芝為傳統養生食材，適合日常補充營養。本產品為一般食品，無治療疾病之功效
+        </p>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- [網頁互動 JavaScript 核心控制邏輯] -->
+    <!-- ================================================================= -->
+    <script>
+        // 全域變數：簡報當前 index (0 ~ 10)
+        let currentSlideIndex = 0;
+        const totalSlides = 11;
+
+        // 頁面初始化
+        window.onload = function() {
+            // 初始化 YouTube Player 網址 (動態綁定最新的專家短影音 ID)
+            document.getElementById('yt-player').src = "https://www.youtube.com/embed/" + GLOBAL_CONFIG.youtubeVideoId;
+
+            // 雙軌自動相容背景加載技術
+            const bgDiv = document.getElementById('bg-div');
+            const testImg = new Image();
+            testImg.src = 'images/BG_page001.webp'; // 優先載入您的 GitHub 本地 WebP 背景
+            testImg.onload = function() {
+                bgDiv.style.backgroundImage = "url('images/BG_page001.webp')";
+            };
+            testImg.onerror = function() {
+                // 優先調用 Raw 備援，若仍失敗則自動切換至穩定的 PostImg，保證在此平台與 LINE 瀏覽器都能看見！
+                bgDiv.style.backgroundImage = `url('${GLOBAL_CONFIG.gitHubRawUrl}images/BG_page001.webp')`;
+                
+                // 再加一層防錯監聽
+                const fallbackImg = new Image();
+                fallbackImg.src = `${GLOBAL_CONFIG.gitHubRawUrl}images/BG_page001.webp`;
+                fallbackImg.onerror = function() {
+                    bgDiv.style.backgroundImage = "url('https://i.postimg.cc/85RRXpKz/BG-page001.png')";
+                };
+            };
+
+            // 預加載簡報初始首頁及鄰近頁面
+            preloadSlide(0);
+
+            // 手機版滑動觸控手勢設定 (Swipe Support)
+            setupTouchGestures();
+        };
+
+        // 簡報鄰近預載功能：搭載智慧型三軌預載備援邏輯 (專為 PC 版設計)
+        function preloadSlide(index) {
+            const indicesToLoad = [index, index + 1, index - 1];
+            indicesToLoad.forEach(idx => {
+                if (idx > 0 && idx < totalSlides) {
+                    const slideImg = document.getElementById(`slide-img-${idx}`);
+                    if (slideImg && slideImg.hasAttribute('data-src')) {
+                        const actualSrc = slideImg.getAttribute('data-src');
+                        
+                        // 建立測試 Image 物件
+                        const preloader = new Image();
+                        preloader.src = actualSrc;
+                        preloader.onload = function() {
+                            slideImg.src = actualSrc;
+                            slideImg.removeAttribute('data-src');
+                        };
+                        preloader.onerror = function() {
+                            // 第一步備援：使用 Raw GitHub (瞬間 Commit 瞬間生效)
+                            const rawUrl = GLOBAL_CONFIG.gitHubRawUrl + actualSrc;
+                            const preloaderRaw = new Image();
+                            preloaderRaw.src = rawUrl;
+                            preloaderRaw.onload = function() {
+                                slideImg.src = rawUrl;
+                                slideImg.removeAttribute('data-src');
+                            };
+                            preloaderRaw.onerror = function() {
+                                // 第二步備援：使用 GitHub Pages 正式網域
+                                const pagesUrl = GLOBAL_CONFIG.gitHubBaseUrl + actualSrc;
+                                slideImg.src = pagesUrl;
+                                slideImg.removeAttribute('data-src');
+                            };
+                        };
+                    }
+                }
+            });
+        }
+
+        // 簡報切換主控邏輯 (PC 版 Slider)
+        function goToSlide(index) {
+            if (index < 0 || index >= totalSlides) return;
+            currentSlideIndex = index;
+
+            // 1. 先預載當前及鄰近簡報
+            preloadSlide(currentSlideIndex);
+
+            // 2. 透過 CSS Translate 平滑移動 Track 容器
+            const percentage = -index * (100 / totalSlides);
+            document.getElementById('slides-track').style.transform = `translateX(${percentage}%)`;
+
+            // 3. 更新數字進度指示
+            document.getElementById('slide-num-indicator').innerText = index + 1;
+
+            // 4. 更新下方的數字導航鍵高亮樣式
+            document.querySelectorAll('.slide-key').forEach(btn => {
+                btn.className = "slide-key w-8 h-8 md:w-10 md:h-10 rounded-full font-black text-xs md:text-sm flex items-center justify-center border transition-all bg-white text-stone-600 border-stone-200 hover:border-emerald-600 hover:text-emerald-800";
+            });
+            const activeBtn = document.getElementById(`slide-dot-${index + 1}`);
+            if (activeBtn) {
+                activeBtn.className = "slide-key w-8 h-8 md:w-10 md:h-10 rounded-full font-black text-xs md:text-sm flex items-center justify-center border transition-all bg-emerald-800 text-white border-emerald-900 shadow-md scale-110";
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < totalSlides - 1) {
+                goToSlide(currentSlideIndex + 1);
+            } else {
+                goToSlide(0); // 循環回第一頁
+            }
+        }
+
+        // 缺失的 prevSlide 函式
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                goToSlide(currentSlideIndex - 1);
+            } else {
+                goToSlide(totalSlides - 1); // 循環至最後一頁
+            }
+        }
+
+        // 重置 setupTouchGestures 函式，防止執行 ReferenceError 錯誤
+        function setupTouchGestures() {
+            const slideViewport = document.getElementById('slide-viewport');
+            if(!slideViewport) return;
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            slideViewport.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            slideViewport.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipeGesture();
+            }, { passive: true });
+
+            function handleSwipeGesture() {
+                const swipeDistance = touchEndX - touchStartX;
+                if (Math.abs(swipeDistance) > 50) { // 觸發閾值 (滑動超過 50px 才切換)
+                    if (swipeDistance < 0) {
+                        nextSlide(); // 向左滑 -> 下一張
+                    } else {
+                        prevSlide(); // 向右滑 -> 上一張
+                    }
+                }
+            }
+        }
+
+        // 當點擊 Logo 或 Home 鍵：平滑移動 to 跑馬燈，此時上方內容完全不露出
+        function goHomeFocus() {
+            const marquee = document.getElementById('marquee-anchor');
+            const nav = document.getElementById('top-nav');
+            if(marquee && nav) {
+                const navHeight = nav.offsetHeight; 
+                const targetPos = marquee.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            }
+        }
+
+        // 切換三圓選單內容
+        function switchSection(id) {
+            // 隱藏所有展示內容
+            document.querySelectorAll('.display-content').forEach(el => el.classList.add('hidden'));
+            
+            // 秀出目標內容
+            const targetContent = document.getElementById('display-' + id);
+            if(targetContent) {
+                targetContent.classList.remove('hidden');
+            }
+
+            // 更新圓圈點選狀態
+            document.querySelectorAll('.nav-circle').forEach(el => el.classList.remove('active'));
+            const targetCircle = document.getElementById('circle-' + id);
+            if(targetCircle) targetCircle.classList.add('active');
+
+            // 滾動定位
+            if(id === 'video') {
+                const videoContainer = document.getElementById('display-video');
+                const navHeight = document.getElementById('top-nav').offsetHeight;
+                const targetPos = videoContainer.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            } else {
+                document.getElementById('interactive-content').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 全域變數：儲存當下選擇 of 導購資料，方便跳轉
+        let selectedPlan = "";
+        let finalRedirectUrl = "";
+        let countdownTimer = null;
+
+        // 觸發導購轉單流程：開啟4秒防迷失遮罩 (完全符合 HD 原廠 show/hide 規格)
+        function triggerPurchase(planName, planId) {
+            selectedPlan = planName;
+            
+            // 如果是從頂部導覽列點選「專屬採購商城」，則直接轉至活動首頁，其難傳送特定方案 ID
+            if (planId === 'NAV_TOP') {
+                finalRedirectUrl = GLOBAL_CONFIG.storeUrl + `?from=nav_top&campaign_code=${GLOBAL_CONFIG.productCode}`;
+            } else {
+                finalRedirectUrl = GLOBAL_CONFIG.storeUrl + `?package_id=${planId}&campaign_code=${GLOBAL_CONFIG.productCode}`;
+            }
+            
+            document.getElementById('overlay-plan-name').innerText = planName;
+            const overlay = document.getElementById('redirect-overlay');
+            overlay.style.display = 'flex'; // 還原為原廠的 flex 顯示樣式
+
+            let secondsLeft = 4;
+            const countdownEl = document.getElementById('countdown-num');
+            countdownEl.innerText = secondsLeft;
+
+            // 清除可能殘留的計時器
+            if(countdownTimer) clearInterval(countdownTimer);
+
+            countdownTimer = setInterval(() => {
+                secondsLeft--;
+                countdownEl.innerText = secondsLeft;
+                
+                if(secondsLeft <= 0) {
+                    clearInterval(countdownTimer);
+                    executeRedirect();
+                }
+            }, 1000);
+        }
+
+        // 執行跳轉
+        function executeRedirect() {
+            // 新視窗打開 (若被瀏覽器擋下，則在原視窗打開，此為最高轉單率寫法)
+            const newWindow = window.open(finalRedirectUrl, '_blank');
+            if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                window.location.href = finalRedirectUrl;
+            }
+            
+            // 延遲隱藏遮罩，避免用戶點選返回時卡在黑暗畫面
+            setTimeout(() => {
+                closeOverlay();
+            }, 1000);
+        }
+
+        // 立即跳轉 (防迷失按鈕)
+        function instantRedirect() {
+            if(countdownTimer) clearInterval(countdownTimer);
+            executeRedirect();
+        }
+
+        // 關閉遮罩 (使用者點選返回修改)
+        function closeOverlay() {
+            if(countdownTimer) clearInterval(countdownTimer);
+            document.getElementById('redirect-overlay').style.display = 'none'; // 還原為原廠 of none 隱藏樣式
+        }
+    </script>
+</body>
+</html>
